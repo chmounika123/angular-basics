@@ -1,0 +1,20 @@
+#myDiv{:ng_controller => "myFirstController"}
+  %form{}
+    state
+    %input{:type => "text", :id => "input1", :ng_model => "newState.state"}
+    capital
+    %input{:type => "text", :id => "input1", :ng_model => "newState.capital"}
+    %button{:ng_click => "addState()"} AddState
+
+  %h4
+    Entered Content Is: {{myInput}}
+  
+  %table
+    %thead
+      %th State
+      %th Capital
+    %tbody
+      %tr{:ng_repeat => "s in states"}
+        %td {{s.state}}
+        %td {{s.capital}}
+= render "doc"
